@@ -48,21 +48,17 @@ source /etc/profile
 git clone -b v6 https://github.com/bakape/shamichan.git meguca
 cd meguca
 
-make
-# Will cause error, expected
+# Make will fail but we want to continue
+make || true
 
-# Modify thumbnailer files
+# Modify thumbnailer files 
 THUMBNAILER_PATH="$(go env GOPATH)/pkg/mod/github.com/bakape/thumbnailer/v2@v2.7.1"
 cp ffmpeg-fix/ffmpeg.h "${THUMBNAILER_PATH}/ffmpeg.h"
 cp ffmpeg-fix/ffmpeg.c "${THUMBNAILER_PATH}/ffmpeg.c"
 cp ffmpeg-fix/ffmpeg.go "${THUMBNAILER_PATH}/ffmpeg.go"
 
-# Copy config
-
-# NOW YEAG
-
-make 
+# Final make attempt, should work alright
+make
 
 # IF EVERYTHING GOES ALRIGHT THIS GOES WELL
 ./meguca
-
