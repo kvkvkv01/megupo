@@ -1,6 +1,6 @@
-# Meguca Liftoff
+# Megupo
 
- A Simple & Straightforwad Script for building Bakape's Shamichan on a fresh Debian server.
+ A Simple & Straightforwad Script for building Bakape's Shamichan/Meguka on a fresh Debian server.
 
 ## What Gets Installed
 
